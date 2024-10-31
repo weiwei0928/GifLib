@@ -1,15 +1,17 @@
 plugins {
     id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
 }
 
 android {
-    namespace 'com.example.gifdemo'
-    compileSdk 32
+    namespace 'com.ww.giflib.demo'
+    compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.gifdemo"
-        minSdk 21
-        targetSdk 32
+        applicationId "com.ww.giflib.demo"
+        minSdk 24
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -26,20 +28,26 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    externalNativeBuild {
-        cmake {
-            path file('src/main/cpp/CMakeLists.txt')
-            version '3.18.1'
-        }
-    }
+//    externalNativeBuild {
+//        cmake {
+//            path file('src/main/cpp/CMakeLists.txt')
+//            version '3.18.1'
+//        }
+//    }
     buildFeatures {
         viewBinding true
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
     }
 }
 
 dependencies {
+    implementation project(':gif-lib')
     implementation  'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'

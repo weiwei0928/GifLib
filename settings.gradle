@@ -20,5 +20,6 @@ dependencyResolutionManagement {
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
     }
 }
-rootProject.name = "GifDemo"
+rootProject.name = "GifLib"
 include ':app'
+include ':gif-lib'
