@@ -42,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             val path = "${Environment.getExternalStorageDirectory().path}/test.gif"
 //        GlideApp.with(this).`as`(FrameSequenceDrawable::class.java).load(path).into(imageView)
-//            GlideApp.with(this).`as`(FrameSequenceDrawable::class.java).load(R.drawable.test).into(imageView)
-            GlideApp.with(this).asGifLib().load(path).into(imageView)
+            GlideApp.with(this).`as`(FrameSequenceDrawable::class.java).load(R.drawable.test).into(imageView) //或者 :
+//            GlideApp.with(this).asGifLib().load(path).into(imageView)
         }
     }
 
