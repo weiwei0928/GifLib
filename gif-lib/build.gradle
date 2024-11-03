@@ -40,7 +40,7 @@ android {
 
 }
 
-def versionName = "1.0.0"
+def versionName = "1.0.1"
 
 afterEvaluate {
     publishing {

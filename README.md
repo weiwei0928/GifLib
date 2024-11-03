@@ -18,5 +18,7 @@ implementation 'com.github.bumptech.glide:glide:4.16.0'
 ```kotlin
 val path = "${Environment.getExternalStorageDirectory().path}/test.gif"
 //GlideApp.with(this).`as`(FrameSequenceDrawable::class.java).load(path).into(imageView)
-GlideApp.with(this).`as`(FrameSequenceDrawable::class.java).load(R.drawable.test).into(imageView)
+//GlideApp.with(this).`as`(FrameSequenceDrawable::class.java).load(R.drawable.test).into(imageView) //或：
+GlideApp.with(this).asGifLib().load(path).into(imageView)
 ```
+
