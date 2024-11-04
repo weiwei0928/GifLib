@@ -7,7 +7,7 @@ maven {
   url 'https://jitpack.io'
 }
 
-implementation 'com.github.weiwei0928:giflib:1.0.0'
+implementation 'com.github.weiwei0928:giflib:1.0.1'
 implementation 'com.github.bumptech.glide:glide:4.16.0'
 ```
 
