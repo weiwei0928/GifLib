@@ -198,7 +198,7 @@ public class FrameSequenceDrawable extends Drawable implements Animatable, Runna
             long invalidateTimeMs = 0;
             try {
                 invalidateTimeMs = mFrameSequenceState.getFrame(nextFrame, bitmap, lastFrame);
-            } catch(Exception e) {
+            } catch (Exception e) {
                 // Exception during decode: continue, but delay next frame indefinitely.
                 Log.e(TAG, "exception during decode: " + e);
                 exceptionDuringDecode = true;
@@ -357,6 +357,8 @@ public class FrameSequenceDrawable extends Drawable implements Animatable, Runna
     protected void finalize() throws Throwable {
         try {
             mFrameSequenceState.destroy();
+        } catch (Throwable t) {
+            Log.e("FrameSequenceDrawable", "Exception during FrameSequenceDrawable finalize()", t);
         } finally {
             super.finalize();
         }
